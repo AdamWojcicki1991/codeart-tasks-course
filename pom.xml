@@ -11,7 +11,7 @@
     <groupId>com.tasks</groupId>
     <artifactId>codeart-tasks</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>codeart-tasks</name>
+    <name>Tasks</name>
     <description>Task Management System</description>
 
     <properties>
