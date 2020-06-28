@@ -1,21 +1,29 @@
 package com.tasks;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
+@Slf4j
+@RequestMapping(path = "/")
 public class TasksController {
+    private final TasksRepository tasksRepository;
 
-    private final TasksConfig config;
-
-    @Autowired
-    public TasksController(TasksConfig config) {
-        this.config = config;
+    public TasksController(TasksRepository tasksRepository) {
+        this.tasksRepository = tasksRepository;
     }
 
-    @GetMapping(path = "/")
-    public String tasks() {
-        return config.getEndpointMessage();
+    @GetMapping()
+    public List<Task> getTasks() {
+        log.info("Fetching all tasks ...");
+        return tasksRepository.fetchAll();
+    }
+
+    @PostMapping
+    public void addTask(@RequestBody Task task) {
+        log.info("Storing new task: {}", task);
+        tasksRepository.add(task);
     }
 }

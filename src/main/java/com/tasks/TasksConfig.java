@@ -1,14 +1,12 @@
 package com.tasks;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@Getter
-@Setter
 @ConfigurationProperties(prefix = "app.tasks")
+@Data
 public class TasksConfig {
     private String endpointMessage;
 }
