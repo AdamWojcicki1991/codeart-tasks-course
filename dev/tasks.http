@@ -2,7 +2,9 @@ POST localhost:9000
 Content-Type: application/json
 
 {
-  "title": "End lesson thirteen 2"
+  "title": "Spring Boot Project",
+  "author": "Adam Wojcicki",
+  "date": "2020-06-28"
 }
 
 ###

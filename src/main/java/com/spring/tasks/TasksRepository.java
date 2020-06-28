@@ -1,4 +1,4 @@
-package com.tasks;
+package com.spring.tasks;
 
 import java.util.List;
 
